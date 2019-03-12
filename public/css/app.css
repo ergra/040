@@ -10661,14 +10661,29 @@ body {
   background: #ffffff;
 }
 
+.block {
+  padding: 2.5rem 0;
+}
+
 .custom-select,
 .form-control {
-  border-radius: 3px;
+  border-radius: 5px;
+  font-size: 12px;
+  padding: 1.25rem;
+  font-weight: 600;
+  border-color: #b6c7aa;
+}
+
+.btn {
+  font-weight: 700;
+  padding: 0.7rem 1.25rem;
 }
 
 label {
   font-size: 11px;
   font-weight: 600;
+  margin: 0;
+  margin-top: 1rem;
   text-transform: uppercase;
 }
 
@@ -10690,6 +10705,8 @@ h3,
 h4,
 h5 {
   font-weight: 900;
+  margin: 0;
+  padding: 0;
   color: #363636;
 }
 
