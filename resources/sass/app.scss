@@ -1,6 +1,6 @@
 
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,900');
 
 // Variables
 @import 'variables';
@@ -8,6 +8,44 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+body {
+  font-family: $font-family-sans-serif;
+  color: $font-color;
+  background: $body-bg;
+}
+
+// Form
+
+.custom-select, .form-control {
+  border-radius: 3px;
+}
+
+label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.course {
+  background: $white;
+}
+
+.company {
+  background: $beige;
+}
+
+.participants {
+  background: $light-grey;
+}
+
+h1,h2,h3,h4,h5 {
+  font-weight: 900;
+  color: $heading-color;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
