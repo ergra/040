@@ -14,3 +14,15 @@
 Route::get('/', function () {
     return view('apply');
 });
+
+
+
+Route::get('courses.json', function () {
+    $filePath = storage_path().'/courses.json';
+    $fileContents = File::get($filePath);
+
+    return Response::make($fileContents, 200);
+});
+
+Route::post('/submit', 'ApplicationFormController@submit');
+

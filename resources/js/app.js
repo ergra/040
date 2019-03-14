@@ -8,12 +8,15 @@
 require('./bootstrap');
 
 import Vue from 'vue'
+
+import VeeValidate from 'vee-validate';
+
+Vue.use(VeeValidate);
+
 import BootstrapVue from 'bootstrap-vue'
-import Vuelidate from 'vuelidate'
 
 
 Vue.use(BootstrapVue)
-Vue.use(Vuelidate)
 
 /**
  * The following block of code may be used to automatically register your

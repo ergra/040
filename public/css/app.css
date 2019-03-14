@@ -10661,17 +10661,52 @@ body {
   background: #ffffff;
 }
 
-.block {
-  padding: 2.5rem 0;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 900;
+  margin: 0;
+  padding: 0;
+  color: #363636;
+}
+
+h2 {
+  font-size: 2.15rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+.slide-fade {
+  margin-top: 1rem;
+}
+
+.slide-fade-enter-active {
+  transition: all 0.3s ease;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.3s ease;
+}
+
+.slide-fade-enter,
+.slide-fade-leave-to {
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
+  opacity: 0;
 }
 
 .custom-select,
 .form-control {
-  border-radius: 5px;
-  font-size: 12px;
-  padding: 1.25rem;
+  font-size: 0.85rem;
   font-weight: 600;
   border-color: #b6c7aa;
+  height: 3rem;
+  line-height: 3rem;
+  padding: 0 1.5rem;
 }
 
 .btn {
@@ -10680,11 +10715,15 @@ body {
 }
 
 label {
-  font-size: 11px;
+  font-size: 0.75rem;
   font-weight: 600;
   margin: 0;
   margin-top: 1rem;
   text-transform: uppercase;
+}
+
+.block {
+  padding: 2.5rem 0;
 }
 
 .course {
@@ -10697,25 +10736,5 @@ label {
 
 .participants {
   background: #f7f5f3;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-weight: 900;
-  margin: 0;
-  padding: 0;
-  color: #363636;
-}
-
-h3 {
-  font-size: 1.5rem;
-}
-
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
