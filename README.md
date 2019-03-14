@@ -1,7 +1,7 @@
 # 040
 
-Configure your database settings in .env
-<br>
+Configure your database settings in .env<br>
+`npm install`<br>
 Install bootstrap-vue
 `npm install bootstrap-vue`<br>
 Install vee
