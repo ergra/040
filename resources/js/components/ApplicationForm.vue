@@ -155,6 +155,13 @@
                 </div>
             </div>
         </b-form>
+        <b-modal ref="success" hide-footer title="Success">
+        <div class="d-block">
+            <h3>Form submitted successfully</h3>
+            <code><pre>{{ success }}</pre></code>
+        </div>
+        <b-button class="mt-3" variant="outline-danger" block @click="hideModal">Close</b-button>
+        </b-modal>
     </div>
 </template>
 <script>
@@ -164,6 +171,7 @@
       return {
         form: {},
         submitted: false,
+        success: null,
         error: false,
         dates: null,
         submitErrors: null,
@@ -194,6 +202,12 @@
         });
     },
     methods: {
+        showModal() {
+        this.$refs.success.show();
+        },
+        hideModal() {
+            this.$refs.success.hide();
+        },
         getCourseDates: function(id) {
             this.dates = this.courses.find(x => x.id === id).dates
         },
@@ -220,6 +234,8 @@
                 if (result) {
                     // eslint-disable-next-line
                     axios.post('/submit', {form: this.form, participants: this.participants}).then(response => {
+                            this.success = [{form: this.form},{participants: this.participants}];
+                            this.showModal();
                             this.resetForm();
                         }).catch(error => {
                         if (error.response.status === 422) {

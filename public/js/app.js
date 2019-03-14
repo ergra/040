@@ -1923,11 +1923,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       form: {},
       submitted: false,
+      success: null,
       error: false,
       dates: null,
       submitErrors: null,
@@ -1966,6 +1973,12 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   methods: {
+    showModal: function showModal() {
+      this.$refs.success.show();
+    },
+    hideModal: function hideModal() {
+      this.$refs.success.hide();
+    },
     getCourseDates: function getCourseDates(id) {
       this.dates = this.courses.find(function (x) {
         return x.id === id;
@@ -1999,6 +2012,14 @@ __webpack_require__.r(__webpack_exports__);
             form: _this2.form,
             participants: _this2.participants
           }).then(function (response) {
+            _this2.success = [{
+              form: _this2.form
+            }, {
+              participants: _this2.participants
+            }];
+
+            _this2.showModal();
+
             _this2.resetForm();
           }).catch(function (error) {
             if (error.response.status === 422) {
@@ -67338,9 +67359,31 @@ var render = function() {
               ],
               1
             )
-          ]),
-          _vm._v("\n        " + _vm._s(_vm.participants) + "\n    ")
+          ])
         ]
+      ),
+      _vm._v(" "),
+      _c(
+        "b-modal",
+        { ref: "success", attrs: { "hide-footer": "", title: "Success" } },
+        [
+          _c("div", { staticClass: "d-block" }, [
+            _c("h3", [_vm._v("Form submitted successfully")]),
+            _vm._v(" "),
+            _c("code", [_c("pre", [_vm._v(_vm._s(_vm.success))])])
+          ]),
+          _vm._v(" "),
+          _c(
+            "b-button",
+            {
+              staticClass: "mt-3",
+              attrs: { variant: "outline-danger", block: "" },
+              on: { click: _vm.hideModal }
+            },
+            [_vm._v("Close")]
+          )
+        ],
+        1
       )
     ],
     1
